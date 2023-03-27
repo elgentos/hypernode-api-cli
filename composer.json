@@ -1,0 +1,54 @@
+{
+    "name": "elgentos/hypernode-api-cli",
+    "description": "Hypernode API CLI in PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Jaap Blaakmeer",
+            "email": "peterjaap@elgnetos.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "hypernode/api-client": "^0.2.1",
+        "laravel-zero/framework": "^10.0",
+        "nunomaduro/termwind": "^1.15",
+        "nyholm/psr7": "^1.5",
+        "symfony/http-client": "^6.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.5",
+        "mockery/mockery": "^1.5.1",
+        "pestphp/pest": "^1.22.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "wget https://raw.githubusercontent.com/ByteInternet/hypernode-api-php/8776b586c600dfe77d7dcec9023c944ed7705c2b/src/Service/BrancherApp.php -O vendor/hypernode/api-client/src/Service/BrancherApp.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "bin": ["hypernode-api-cli"]
+}
