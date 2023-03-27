@@ -46,6 +46,11 @@ class ListBrancherNodes extends Command
             return Command::SUCCESS;
         }
 
+        if (count($branchers) === 0) {
+            $this->line('No Brancher nodes found for ' . $originHypernode);
+            return Command::SUCCESS;
+        }
+
         $headers = array_keys($branchers[array_key_first($branchers)]);
 
         $tableData = [];
