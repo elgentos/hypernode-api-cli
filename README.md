@@ -2,6 +2,8 @@
 
 Standalone PHAR implementation of the Hypernode API PHP client library.
 
+Set `HYPERNODE_API_TOKEN` environment variable with the key of the Hypernode you want to run these commands against. You can find the key on your Hypernode in `/etc/hypernode/hypernode_api_token`.
+
 ## Usage
 
 ```
