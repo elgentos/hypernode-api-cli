@@ -4,6 +4,7 @@ namespace App\Commands;
 
 use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
+use Hypernode\Api\HypernodeClientFactory;
 
 class ListBrancherNodes extends Command
 {
@@ -12,7 +13,7 @@ class ListBrancherNodes extends Command
      *
      * @var string
      */
-    protected $signature = 'brancher:list';
+    protected $signature = 'brancher:list {hypernode}';
 
     /**
      * The description of the command.
@@ -28,7 +29,13 @@ class ListBrancherNodes extends Command
      */
     public function handle()
     {
-        //
+        $client = HypernodeClientFactory::create(config('hypernode.api_token'));
+
+        $originHypernode = $this->argument('hypernode');
+
+        $client->brancherApp->list($originHypernode);
+
+        print_r($client->brancherApp->list($originHypernode));
     }
 
     /**
