@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "hypernode/api-client": "^0.2.1",
+        "hypernode/api-client": "dev-master",
         "laravel-zero/framework": "^10.0",
         "nunomaduro/termwind": "^1.15",
         "nyholm/psr7": "^1.5",
@@ -42,11 +42,6 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "wget https://raw.githubusercontent.com/ByteInternet/hypernode-api-php/8776b586c600dfe77d7dcec9023c944ed7705c2b/src/Service/BrancherApp.php -O vendor/hypernode/api-client/src/Service/BrancherApp.php"
-        ]
     },
     "minimum-stability": "stable",
     "prefer-stable": true,

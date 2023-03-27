@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05f294a5a2f19214ac867c9f1221a787",
+    "content-hash": "f32d29d83ab1ee30f46eec8255e648b4",
     "packages": [
         {
             "name": "brick/math",
@@ -415,19 +415,20 @@
         },
         {
             "name": "hypernode/api-client",
-            "version": "0.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ByteInternet/hypernode-api-php.git",
-                "reference": "5fc348028551b5c6d2bbf1c1894f2cc3d59230e9"
+                "reference": "93d8d9738288204bdadd372a36976f26da96fdaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ByteInternet/hypernode-api-php/zipball/5fc348028551b5c6d2bbf1c1894f2cc3d59230e9",
-                "reference": "5fc348028551b5c6d2bbf1c1894f2cc3d59230e9",
+                "url": "https://api.github.com/repos/ByteInternet/hypernode-api-php/zipball/93d8d9738288204bdadd372a36976f26da96fdaf",
+                "reference": "93d8d9738288204bdadd372a36976f26da96fdaf",
                 "shasum": ""
             },
             "require": {
+                "composer-runtime-api": "^2.0",
                 "ext-curl": "*",
                 "ext-json": "*",
                 "nesbot/carbon": "^2.0",
@@ -442,6 +443,7 @@
                 "nikic/php-parser": "^4.14",
                 "phpunit/phpunit": "^9.5"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -460,9 +462,9 @@
             "description": "Hypernode API Client for PHP",
             "support": {
                 "issues": "https://github.com/ByteInternet/hypernode-api-php/issues",
-                "source": "https://github.com/ByteInternet/hypernode-api-php/tree/0.2.1"
+                "source": "https://github.com/ByteInternet/hypernode-api-php/tree/master"
             },
-            "time": "2022-11-25T14:45:54+00:00"
+            "time": "2023-03-27T14:50:03+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -6068,16 +6070,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.5",
+            "version": "9.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "86e761949019ae83f49240b2f2123fb5ab3b2fc5"
+                "reference": "b65d59a059d3004a040c16a82e07bbdf6cfdd115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/86e761949019ae83f49240b2f2123fb5ab3b2fc5",
-                "reference": "86e761949019ae83f49240b2f2123fb5ab3b2fc5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b65d59a059d3004a040c16a82e07bbdf6cfdd115",
+                "reference": "b65d59a059d3004a040c16a82e07bbdf6cfdd115",
                 "shasum": ""
             },
             "require": {
@@ -6150,7 +6152,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.5"
+                "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.6"
             },
             "funding": [
                 {
@@ -6166,7 +6169,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-09T06:34:10+00:00"
+            "time": "2023-03-27T11:43:46+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -7185,7 +7188,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "hypernode/api-client": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
