@@ -55,9 +55,8 @@ class ListBrancherNodes extends Command
 
         $tableData = [];
         foreach ($branchers as $brancher) {
-            $brancher['labels'] = array_keys($brancher['labels']);
             foreach ($brancher as $key => $value) {
-                if (is_array($value)) $brancher[$key] = implode(', ', $value);
+                if (is_array($value)) $brancher[$key] = http_build_query(data: $value, arg_separator: PHP_EOL);
             }
             $tableData[] = $brancher;
         }
