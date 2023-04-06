@@ -61,3 +61,20 @@ Arguments:
 Options:
       --output[=OUTPUT]  Output format (json, default: table)
 ```
+
+### brancher:update
+
+```
+Description:
+  Update a Brancher node with new labels
+
+Usage:
+  brancher:update [options] [--] <hypernode>
+
+Arguments:
+  hypernode             
+
+Options:
+      --append-labels   
+      --label[=LABEL]   Add labels to your Brancher node (comma-separated)
+```
