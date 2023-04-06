@@ -15,7 +15,7 @@ class ListBrancherNodes extends Command
      *
      * @var string
      */
-    protected $signature = 'brancher:list {hypernode} {--output= : Output format (json, default: table)}';
+    protected $signature = 'brancher:list {hypernode} {--token= : The Hypernode API token} {--output= : Output format (json, default: table)}';
 
     /**
      * The description of the command.
@@ -33,7 +33,7 @@ class ListBrancherNodes extends Command
      */
     public function handle()
     {
-        $client = HypernodeClientFactory::create(config('hypernode.api_token'));
+        $client = HypernodeClientFactory::create($this->option('token') ?? config('hypernode.api_token'));
 
         $originHypernode = $this->argument('hypernode');
 

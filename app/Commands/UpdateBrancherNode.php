@@ -14,7 +14,7 @@ class UpdateBrancherNode extends Command
      *
      * @var string
      */
-    protected $signature = 'brancher:update {hypernode} {--append-labels} {--label= : Add labels to your Brancher node (comma-separated)}';
+    protected $signature = 'brancher:update {hypernode} {--token= : The Hypernode API token} {--append-labels} {--label= : Add labels to your Brancher node (comma-separated)}';
 
     /**
      * The description of the command.
@@ -32,7 +32,7 @@ class UpdateBrancherNode extends Command
      */
     public function handle()
     {
-        $client = HypernodeClientFactory::create(config('hypernode.api_token'));
+        $client = HypernodeClientFactory::create($this->option('token') ?? config('hypernode.api_token'));
 
         $originHypernode = $this->argument('hypernode');
 

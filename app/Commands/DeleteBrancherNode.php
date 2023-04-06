@@ -14,7 +14,7 @@ class DeleteBrancherNode extends Command
      *
      * @var string
      */
-    protected $signature = 'brancher:delete {hypernode}';
+    protected $signature = 'brancher:delete {hypernode} {--token= : The Hypernode API token}';
 
     /**
      * The description of the command.
@@ -32,7 +32,7 @@ class DeleteBrancherNode extends Command
      */
     public function handle()
     {
-        $client = HypernodeClientFactory::create(config('hypernode.api_token'));
+        $client = HypernodeClientFactory::create($this->option('token') ?? config('hypernode.api_token'));
 
         $hypernode = $this->argument('hypernode');
 

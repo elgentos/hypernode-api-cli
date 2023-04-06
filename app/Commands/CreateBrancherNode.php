@@ -14,7 +14,7 @@ class CreateBrancherNode extends Command
      *
      * @var string
      */
-    protected $signature = 'brancher:create {hypernode} {--label= : Add labels to your Brancher node (comma-separated, optional)} {--clear-services= : Clear the data for provided service(s) when creating the Brancher instance. Useful when you don\'t want to run the production cron or supervisor. Can also be useful if you want to supply your own anonymized database. Possible options: cron, elasticsearch, mysql, supervisor (comma-separated, optional)}';
+    protected $signature = 'brancher:create {hypernode} {--token= : The Hypernode API token} {--label= : Add labels to your Brancher node (comma-separated, optional)} {--clear-services= : Clear the data for provided service(s) when creating the Brancher instance. Useful when you don\'t want to run the production cron or supervisor. Can also be useful if you want to supply your own anonymized database. Possible options: cron, elasticsearch, mysql, supervisor (comma-separated, optional)}';
 
     /**
      * The description of the command.
@@ -32,7 +32,7 @@ class CreateBrancherNode extends Command
      */
     public function handle()
     {
-        $client = HypernodeClientFactory::create(config('hypernode.api_token'));
+        $client = HypernodeClientFactory::create($this->option('token') ?? config('hypernode.api_token'));
 
         $originHypernode = $this->argument('hypernode');
 
