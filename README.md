@@ -14,6 +14,8 @@ Set `HYPERNODE_API_TOKEN` environment variable with the key of the Hypernode you
   brancher:create Create a new Brancher node
   brancher:delete Delete/cancel a Brancher node
   brancher:list   List all Brancher nodes for a given Hypernode
+
+  Option: pass the token with `--token` instead of setting an env variable.
 ```
 
 ### brancher:create
