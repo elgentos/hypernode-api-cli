@@ -37,8 +37,6 @@ class ListBrancherNodes extends Command
 
         $originHypernode = $this->argument('hypernode');
 
-        $client->brancherApp->list($originHypernode);
-
         $branchers = $client->brancherApp->list($originHypernode);
 
         if ($this->option('output') === 'json') {
